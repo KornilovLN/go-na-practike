@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/KornilovLN/go-na-praktike/cmd/wrk-configs/pkg/types"
+	"github.com/KornilovLN/go-na-practike/cmd/wrk-configs/pkg/types"
 )
 
 type JSONParser struct{}

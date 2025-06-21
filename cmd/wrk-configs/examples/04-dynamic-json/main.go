@@ -71,7 +71,7 @@ func printJSONStructure(data interface{}, indent int) {
 }
 
 func main() {
-	filePath := "../../configs/examples/conf.json"
+	filePath := "cmd/wrk-configs/configs/examples/conf.json"
 	if len(os.Args) > 1 {
 		filePath = os.Args[1]
 	}

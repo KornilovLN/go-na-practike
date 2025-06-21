@@ -20,7 +20,7 @@ func main() {
 
 	// Извлечение данных из INI-файла в структуру с обработкой ошибок
 	//err := gcfg.ReadFileInto(&config, "cmd/work-configs/conf.ini")
-	err := gcfg.ReadFileInto(&config, "../../configs/examples/conf.ini")
+	err := gcfg.ReadFileInto(&config, "cmd/wrk-configs/configs/examples/conf.ini")
 	if err != nil {
 		fmt.Println("Failed to parse config file: %s", err)
 	}

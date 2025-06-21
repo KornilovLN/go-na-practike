@@ -2,7 +2,7 @@
 package parsers
 
 import (
-	"github.com/KornilovLN/go-na-praktike/cmd/wrk-configs/pkg/types"
+	"github.com/KornilovLN/go-na-practike/cmd/wrk-configs/pkg/types"
 	"gopkg.in/ini.v1"
 )
 

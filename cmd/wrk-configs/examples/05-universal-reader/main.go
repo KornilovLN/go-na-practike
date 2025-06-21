@@ -241,7 +241,7 @@ func (cr *ConfigReader) ToJSON(pretty bool) ([]byte, error) {
 }
 
 func main() {
-	filePath := "../../configs/examples/test_config.json"
+	filePath := "cmd/wrk-configs/configs/examples/test_config.json"
 	if len(os.Args) < 2 {
 		fmt.Println("Использование: go run universal_config_reader.go <путь_к_json_файлу>")
 		return

@@ -5,7 +5,7 @@ package parsers
 import (
 	"os"
 
-	"github.com/KornilovLN/go-na-praktike/cmd/wrk-configs/pkg/types"
+	"github.com/KornilovLN/go-na-practike/cmd/wrk-configs/pkg/types"
 	"gopkg.in/yaml.v3"
 )
 

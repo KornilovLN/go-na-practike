@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/KornilovLN/go-na-praktike/cmd/wrk-configs/pkg/parsers"
-	"github.com/KornilovLN/go-na-praktike/cmd/wrk-configs/pkg/types"
+	"github.com/KornilovLN/go-na-practike/cmd/wrk-configs/pkg/parsers"
+	"github.com/KornilovLN/go-na-practike/cmd/wrk-configs/pkg/types"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 	parser := parsers.NewJSONParser()
 
 	var config types.CommonConfig
-	err := parser.ParseFile("../../configs/examples/app.json", &config)
+	err := parser.ParseFile("cmd/wrk-configs/configs/examples/app.json", &config)
 	if err != nil {
 		log.Fatal("Ошибка парсинга:", err)
 	}

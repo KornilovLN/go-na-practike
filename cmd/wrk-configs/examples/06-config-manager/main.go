@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gopkg.in/gcfg.v1"
+	"gopkg.in/ini.v1"
 )
 
 // ConfigReader универсальный читатель конфигураций
@@ -163,18 +163,27 @@ func (cm *ConfigManager) loadJSON() error {
 
 // loadINI загружает INI конфигурацию
 func (cm *ConfigManager) loadINI() error {
-	// Для демонстрации используем универсальную структуру
-	iniConfig := struct {
-		Section map[string]map[string]string
-	}{
-		Section: make(map[string]map[string]string),
-	}
-
-	if err := gcfg.ReadFileInto(&iniConfig, cm.FilePath); err != nil {
+	cfg, err := ini.Load(cm.FilePath)
+	if err != nil {
 		return fmt.Errorf("ошибка чтения INI файла: %w", err)
 	}
 
-	cm.INIData = iniConfig
+	// Преобразуем в map[string]map[string]string
+	iniData := make(map[string]map[string]string)
+
+	for _, section := range cfg.Sections() {
+		sectionName := section.Name()
+		if sectionName == "DEFAULT" {
+			sectionName = "default"
+		}
+
+		iniData[sectionName] = make(map[string]string)
+		for _, key := range section.Keys() {
+			iniData[sectionName][key.Name()] = key.String()
+		}
+	}
+
+	cm.INIData = iniData
 	return nil
 }
 
@@ -194,14 +203,27 @@ func (cm *ConfigManager) PrintInfo() {
 		cm.JSONReader.PrintStructure()
 	case ".ini":
 		fmt.Println("INI конфигурация:")
-		if data, ok := cm.INIData.(struct{ Section map[string]map[string]string }); ok {
-			for section, values := range data.Section {
-				fmt.Printf("  [%s]\n", section)
+		if data, ok := cm.INIData.(map[string]map[string]string); ok {
+			for section, values := range data {
+				fmt.Printf(" [%s]\n", section)
 				for key, value := range values {
-					fmt.Printf("    %s = %s\n", key, value)
+					fmt.Printf("   %s = %s\n", key, value)
 				}
 			}
 		}
+		/*
+			case ".ini":
+				fmt.Println("INI конфигурация:")
+				if data, ok := cm.INIData.(struct{ Section map[string]map[string]string }); ok {
+					for section, values := range data.Section {
+						fmt.Printf("  [%s]\n", section)
+						for key, value := range values {
+							fmt.Printf("    %s = %s\n", key, value)
+						}
+					}
+				}
+		*/
+
 	}
 }
 
@@ -234,7 +256,7 @@ func findConfigFiles(dir string) ([]string, error) {
 	return configFiles, nil
 }
 
-const DefaultConfigDir = "../../configs/examples"
+const DefaultConfigDir = "cmd/wrk-configs/configs/examples/"
 
 func main() {
 	var filesToProcess []string

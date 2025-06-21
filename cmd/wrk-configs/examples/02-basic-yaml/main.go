@@ -19,7 +19,7 @@ type Config struct {
 
 func main() {
 	//data, err := os.ReadFile("cmd/work-configs/conf.yaml")
-	data, err := os.ReadFile("../../configs/examples/conf.yaml")
+	data, err := os.ReadFile("cmd/wrk-configs/configs/examples/conf.yaml")
 	if err != nil {
 		log.Fatalf("Ошибка чтения файла: %v", err)
 	}
