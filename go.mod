@@ -2,8 +2,6 @@ module github.com/KornilovLN/go-na-practike
 
 go 1.23.1
 
-replace github.com/KornilovLN/go-na-praktike/cmd/wrk-configs => ./cmd/wrk-configs
-
 require (
     gopkg.in/urfave/cli.v1 v1.20.0
 	github.com/kylelemons/go-gypsy v1.0.0 // indirect
