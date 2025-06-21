@@ -1,0 +1,3 @@
+# Используется в yamlConfig.go
+enabled: true
+path: /usr/local/etc/work-configs

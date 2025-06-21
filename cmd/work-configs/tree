@@ -1,0 +1,21 @@
+.
+├── author
+│   └── author.go
+├── config_manager.go
+├── conf.ini
+├── conf.json
+├── conf.yaml
+├── dynamic_json_reader.go
+├── findConfigFiles.go
+├── ini_config.go
+├── json_config.go
+├── json_to_struct.go
+├── readAnyJson.md
+├── test2_config.json
+├── test_config.json
+├── tree
+├── universal_config_reader.go
+├── yaml_config2.go
+└── yaml_config.go
+
+1 directory, 17 files

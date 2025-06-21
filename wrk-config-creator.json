@@ -1,0 +1,30 @@
+{
+    "base": "cmd/wrk-configs",
+    "structure": {
+      "configs": {
+        "examples": {},
+        "schemas": {}
+      },
+      "pkg": {
+        "parsers": {},
+        "generators": {},
+        "utils": {},
+        "types": {}
+      },
+      "examples": {
+        "01-basic-json": {},
+        "02-basic-yaml": {},
+        "03-basic-ini": {},
+        "04-dynamic-json": {},
+        "05-universal-reader": {},
+        "06-config-manager": {},
+        "07-json-to-struct": {}
+      },
+      "cmd": {
+        "config-converter": {},
+        "config-validator": {}
+      },
+      "internal": {}
+    }
+  }
+  

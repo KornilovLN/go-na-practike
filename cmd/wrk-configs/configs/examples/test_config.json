@@ -1,0 +1,40 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "myapp",
+    "credentials": {
+      "username": "admin",
+      "password": "secret"
+    },
+    "ssl": true,
+    "timeout": 30.5
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "debug": true,
+    "middlewares": ["cors", "auth", "logging"],
+    "limits": {
+      "max_connections": 1000,
+      "request_timeout": 60,
+      "body_size": "10MB"
+    }
+  },
+  "logging": {
+    "level": "info",
+    "outputs": ["console", "file"],
+    "file_config": {
+      "path": "/var/log/app.log",
+      "max_size": 100,
+      "rotate": true
+    }
+  },
+  "features": {
+    "cache_enabled": true,
+    "metrics_enabled": false,
+    "experimental": ["feature_a", "feature_b"]
+  },
+  "version": "1.2.3",
+  "environment": "development"
+}

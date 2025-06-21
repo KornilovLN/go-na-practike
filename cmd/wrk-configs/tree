@@ -1,0 +1,48 @@
+.
+├── cmd
+│   ├── config-converter
+│   └── config-validator
+├── configs
+│   ├── examples
+│   │   ├── app.ini
+│   │   ├── app.json
+│   │   ├── app.yml
+│   │   ├── conf.ini
+│   │   ├── conf.json
+│   │   ├── conf.yaml
+│   │   ├── test2_config.json
+│   │   ├── test_config.json
+│   │   └── toml.ini
+│   └── schemas
+├── examples
+│   ├── 01-basic-json
+│   │   └── main.go
+│   ├── 02-basic-yaml
+│   │   └── main.go
+│   ├── 03-basic-ini
+│   │   └── main.go
+│   ├── 04-dynamic-json
+│   │   └── main.go
+│   ├── 05-universal-reader
+│   │   └── main.go
+│   ├── 06-config-manager
+│   │   └── main.go
+│   └── 07-json-to-struct
+│       └── main.go
+├── internal
+├── md
+│   ├── configreaders.md
+│   └── perenos.md
+├── pkg
+│   ├── generators
+│   │   └── json.go
+│   ├── parsers
+│   │   ├── ini.go
+│   │   └── yaml.go
+│   ├── types
+│   │   └── config.go
+│   └── utils
+│       └── finder.go
+└── tree
+
+21 directories, 24 files
